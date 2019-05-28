@@ -18,6 +18,7 @@ import AddScreen from "./screens/AddScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import Setting1Screen from "./screens/Setting1Screen";
 import Setting2Screen from "./screens/Setting2Screen";
+import ShotImage from "./screens/ShotImage";
 
 export default class App extends React.Component {
   render() {
@@ -80,11 +81,11 @@ export default class App extends React.Component {
           jeaderBackTitle: "Profile"
         }
       },
-      setting1: {
-        screen: Setting1Screen,
+      shotimage: {
+        screen: ShotImage,
         navigationOptions: {
           ...headerNavigationOptions,
-          headerTitle: "setting 1"
+          headerTitle: "TakePhoto"
         }
       },
       setting2: {
