@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, Button, Image, CameraRoll } from 'react-native';
+import { View, Image, CameraRoll } from 'react-native';
+// Text, Button,
+import { Container, Content, Button, Text } from 'native-base';
 import { ImagePicker } from 'expo';
+import { Card, ListItem, } from 'react-native-elements'
 
 class ImagePickerSample extends Component {
 
@@ -42,24 +45,39 @@ class ImagePickerSample extends Component {
 
         return(
             <View style={styles.containerStyle}>
-                <Text>Image Picker Sample</Text>
+                {/* <Text style={styles.textStyle}>Image Picker Sample</Text> */}
 
-                <Button
-                    onPress={this._takePhoto}
-                    title="カメラを起動"
-                />
+                <View style={styles.cameraView}>
+                    <Button primary
+                        onPress={this._takePhoto}>
+                        <Text>カメラを起動</Text>
+                    </Button>
+                </View>
 
-                <Button
-                    onPress={this._pickImage}
-                    title="カメラロールから選択"
-                />
+                <View style={styles.cameraView}>
+                    <Button success
+                        onPress={this._pickImage}>
+                        <Text>カメラロールから選択</Text>
+                    </Button>
+                </View>
 
                 {
                     image &&
-                    <Image
-                        source={{uri: image}}
-                        style={{width: 300, height: 300}}
-                    />
+                    <View>
+                        <Text>撮影画像はこちら</Text>
+                        <Image
+                            source={{uri: image}}
+                            style={{width: 300, height: 300}}
+                        />
+                    
+                        <Card　style={{width: 300, height: 500}}
+                            title='撮影画像はこちら'
+                            image={{uri: image}}>
+                            <Text style={{marginBottom: 10}}>
+                                割りと簡単に出せますね。便利かも。長いと勝手に改行されます
+                            </Text>
+                        </Card>
+                    </View>
                 }
             </View>
         );
@@ -71,6 +89,12 @@ const styles = {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    cameraView: {
+        fontSize: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: 20,
     },
     textStyle: {
         fontSize: 20,
