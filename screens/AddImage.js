@@ -3,7 +3,7 @@ import { View, Image, CameraRoll } from 'react-native';
 // Text, Button,
 import { Container, Content, Button, Text } from 'native-base';
 import { ImagePicker } from 'expo';
-import { Card, ListItem, } from 'react-native-elements'
+import { Card, ListItem,Icon,Header } from 'react-native-elements'
 
 class ImagePickerSample extends Component {
 
@@ -44,21 +44,34 @@ class ImagePickerSample extends Component {
         let { image } = this.state;
 
         return(
-            <View style={styles.containerStyle}>
-                {/* <Text style={styles.textStyle}>Image Picker Sample</Text> */}
-
-                <View style={styles.cameraView}>
-                    <Button primary
-                        onPress={this._takePhoto}>
-                        <Text>カメラを起動</Text>
-                    </Button>
+            <View　style={{flex:1}}>
+                <View>
+                    <Header
+                        statusBarProps={{ barStyle: 'light-content' }}
+                        backgroundColor="deepskyblue"
+                        leftComponent={{
+                            icon: 'close',
+                            color: 'white',
+                            onPress: () => {
+                                this.props.navigation.navigate('home');
+                            }
+                        }}
+                        centerComponent={{ text: 'Add', style: styles.headerStyle }}
+                    />
                 </View>
-
-                <View style={styles.cameraView}>
-                    <Button success
-                        onPress={this._pickImage}>
-                        <Text>カメラロールから選択</Text>
-                    </Button>
+                
+                <View style={styles.container} >
+                        <Button primary
+                            style={styles.cameraView}
+                            onPress={this._takePhoto}>
+                            <Text>カメラを起動</Text>
+                        </Button>
+    
+                        <Button success
+                            style={styles.cameraView}
+                            onPress={this._pickImage}>
+                            <Text>カメラロールから選択</Text>
+                        </Button>
                 </View>
 
                 {
@@ -69,14 +82,6 @@ class ImagePickerSample extends Component {
                             source={{uri: image}}
                             style={{width: 300, height: 300}}
                         />
-                    
-                        {/* <Card　style={{width: 300, height: 500}}
-                            title='撮影画像はこちら'
-                            image={{uri: image}}>
-                            <Text style={{marginBottom: 10}}>
-                                割りと簡単に出せますね。便利かも。長いと勝手に改行されます
-                            </Text>
-                        </Card> */}
                     </View>
                 }
             </View>
@@ -85,10 +90,16 @@ class ImagePickerSample extends Component {
 }
 
 const styles = {
-    containerStyle: {
+    container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        // backgroundColor: 'red'
+    },
+    headerStyle: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold'
     },
     cameraView: {
         fontSize: 20,

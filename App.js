@@ -19,6 +19,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import Setting1Screen from "./screens/Setting1Screen";
 import Setting2Screen from "./screens/Setting2Screen";
 import ShotImage from "./screens/ShotImage";
+import AddImage from "./screens/AddImage";
 
 export default class App extends React.Component {
   render() {
@@ -63,6 +64,15 @@ export default class App extends React.Component {
           header: null
         }
       }
+      // add: {
+      //   screen: AddImage,
+      //   navigationOptions: {
+      //     // ...headerNavigationOptions,
+      //     // headerTitle: "ShotImage",
+      //     // headerBackTitle: "Home",
+      //     header: null
+      //   }
+      // }
     });
 
     AddStack.navigationOptions = ({ navigation }) => {
@@ -78,7 +88,7 @@ export default class App extends React.Component {
         navigationOptions: {
           ...headerNavigationOptions,
           headerTitle: "Treco",
-          jeaderBackTitle: "Profile"
+          headerBackTitle: "Profile"
         }
       },
       shotimage: {
@@ -172,3 +182,5 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+
+//大輔のページ
