@@ -3,7 +3,7 @@
 <<<<<<< HEAD
 add idenoue branch
 =======
-ideƒuƒ‰ƒ“ƒ`‚Éadd
+ideï¿½uï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½add
 a
 b
 c
@@ -17,3 +17,5 @@ add yamamoto
 add yamamoto 
 add yamamoto v2
 >>>>>>> yamamoto
+
+add yamamoto v3
