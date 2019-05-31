@@ -19,6 +19,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import Setting1Screen from "./screens/Setting1Screen";
 import Setting2Screen from "./screens/Setting2Screen";
 import ShotImage from "./screens/ShotImage";
+import AddImage from "./screens/AddImage";
 
 export default class App extends React.Component {
   render() {
@@ -57,9 +58,18 @@ export default class App extends React.Component {
 
     const AddStack = createStackNavigator({
       // ←追記部分
+      // add: {
+      //   screen: AddScreen,
+      //   navigationOptions: {
+      //     header: null
+      //   }
+      // }
       add: {
-        screen: AddScreen,
+        screen: AddImage,
         navigationOptions: {
+          // ...headerNavigationOptions,
+          // headerTitle: "ShotImage",
+          // headerBackTitle: "Home",
           header: null
         }
       }
@@ -78,7 +88,7 @@ export default class App extends React.Component {
         navigationOptions: {
           ...headerNavigationOptions,
           headerTitle: "Treco",
-          jeaderBackTitle: "Profile"
+          headerBackTitle: "Profile"
         }
       },
       shotimage: {
