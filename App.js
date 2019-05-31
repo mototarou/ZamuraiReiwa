@@ -172,3 +172,5 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+
+//大輔のページ
