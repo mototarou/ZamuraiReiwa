@@ -1,5 +1,5 @@
-add idenoue branch
+git pushとかの変更が正しいかの確認git
+デュアルテスト
 
-
-ishida_log
-daisuke_log
+差分どうなるの？？？？
+ishida
