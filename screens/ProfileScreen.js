@@ -25,7 +25,7 @@ class ProfileScreen extends React.Component {
       <View style={{ flex: 1, justifyContent: 'center' }}>
         <View style={{ padding: 20 }}>
           <Button
-            title="Take a Photo!"
+            title="写真を撮る"
             onPress={() => this.props.navigation.navigate('shotimage')}
           />
         </View>
