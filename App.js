@@ -58,21 +58,21 @@ export default class App extends React.Component {
 
     const AddStack = createStackNavigator({
       // ←追記部分
-      // add: {
-      //   screen: AddScreen,
-      //   navigationOptions: {
-      //     header: null
-      //   }
-      // }
       add: {
-        screen: AddImage,
+        screen: AddScreen,
         navigationOptions: {
-          // ...headerNavigationOptions,
-          // headerTitle: "ShotImage",
-          // headerBackTitle: "Home",
           header: null
         }
       }
+      // add: {
+      //   screen: AddImage,
+      //   navigationOptions: {
+      //     // ...headerNavigationOptions,
+      //     // headerTitle: "ShotImage",
+      //     // headerBackTitle: "Home",
+      //     header: null
+      //   }
+      // }
     });
 
     AddStack.navigationOptions = ({ navigation }) => {
